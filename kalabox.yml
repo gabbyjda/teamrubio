@@ -1,0 +1,38 @@
+name: teamrubio
+type: pantheon
+plugins:
+  - kalabox-plugin-pantheon
+pluginconfig:
+  cli: 'on'
+  sharing:
+    share: 'data:/code'
+    ignore:
+      - Name sites/default/files
+  services:
+    web:
+      - port: 80/tcp
+        default: true
+      - port: 443/tcp
+        default: true
+        secure: true
+    edge:
+      - port: 80/tcp
+        hostname: edge
+      - port: 443/tcp
+        hostname: edge
+        secure: true
+  pantheon:
+    site: teamrubio
+    env: dev
+    uuid: 1842b43d-df7a-4ea4-a44c-749e01318388
+    framework: drupal8
+    upstream:
+      url: 'git://github.com/pantheon-systems/drops-8.git'
+      product_id: 8a129104-9d37-4082-aaf8-e6f31154644e
+      branch: master
+    images: v2.1.3
+    php: 56
+    drush: 8-php5
+    name: Gabriel Diaz
+    email: gabbyjda@gmail.com
+version: 2.1.3
